@@ -14,7 +14,7 @@ export const LoginScreen: React.FC = () => {
     e.preventDefault();
     setUser({
       id: 'u1',
-      name: 'Muhammad Anas',
+      name: 'Mujtaba Bilal Bela',
       email: 'hello@example.com',
       role: role
     });

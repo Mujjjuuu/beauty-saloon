@@ -20,7 +20,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               const Text(
-                'Muhammad Anas',
+                'Mujtaba Bilal Bela',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w900),
               ),
               const Text(

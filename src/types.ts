@@ -33,6 +33,7 @@ export interface Salon {
   location: string;
   distance: string;
   startingPrice: number;
+  orders: number;
   services: Service[];
   reviews: Review[];
   isOpen: boolean;

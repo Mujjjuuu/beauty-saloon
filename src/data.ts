@@ -10,6 +10,7 @@ export const SALONS: Salon[] = [
     location: 'Main Boulevard, Gulberg, Lahore',
     distance: '8 km',
     startingPrice: 2000,
+    orders: 1250,
     isOpen: true,
     services: [
       { id: 's1', name: 'Signature Hair Cut', price: 2000, duration: '60 min' },
@@ -31,6 +32,7 @@ export const SALONS: Salon[] = [
     location: 'DHA Phase 5, Lahore',
     distance: '12 km',
     startingPrice: 1500,
+    orders: 840,
     isOpen: true,
     services: [
       { id: 's5', name: 'Classic Fade', price: 1500, duration: '45 min' },
@@ -47,10 +49,61 @@ export const SALONS: Salon[] = [
     location: 'Model Town, Lahore',
     distance: '5 km',
     startingPrice: 2500,
+    orders: 2100,
     isOpen: true,
     services: [
       { id: 's7', name: 'Bridal Makeup', price: 25000, duration: '240 min' },
       { id: 's8', name: 'Manicure', price: 2500, duration: '60 min' },
+    ],
+    reviews: []
+  },
+  {
+    id: '4',
+    name: 'The Barber Shop',
+    image: 'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800',
+    rating: 4.6,
+    reviewCount: 150,
+    location: 'Johar Town, Lahore',
+    distance: '3 km',
+    startingPrice: 1000,
+    orders: 450,
+    isOpen: true,
+    services: [
+      { id: 's9', name: 'Hair Cut', price: 1000, duration: '30 min' },
+      { id: 's10', name: 'Shave', price: 500, duration: '20 min' },
+    ],
+    reviews: []
+  },
+  {
+    id: '5',
+    name: 'Glow Beauty Bar',
+    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&q=80&w=800',
+    rating: 4.9,
+    reviewCount: 320,
+    location: 'Gulberg III, Lahore',
+    distance: '7 km',
+    startingPrice: 3000,
+    orders: 3200,
+    isOpen: true,
+    services: [
+      { id: 's11', name: 'Full Body Massage', price: 5000, duration: '60 min' },
+      { id: 's12', name: 'Hydra Facial', price: 8000, duration: '45 min' },
+    ],
+    reviews: []
+  },
+  {
+    id: '6',
+    name: 'Urban Cut',
+    image: 'https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&q=80&w=800',
+    rating: 4.5,
+    reviewCount: 95,
+    location: 'Wapda Town, Lahore',
+    distance: '15 km',
+    startingPrice: 1200,
+    orders: 150,
+    isOpen: true,
+    services: [
+      { id: 's13', name: 'Hair Styling', price: 1200, duration: '40 min' },
     ],
     reviews: []
   }
