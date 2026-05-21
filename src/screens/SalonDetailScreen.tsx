@@ -43,8 +43,8 @@ export const SalonDetailScreen: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex-1 bg-[#FAFAFA] -mt-8 rounded-t-[40px] p-8 space-y-6 overflow-y-auto">
-        <div className="space-y-2">
+      <div className="flex-1 bg-[#FAFAFA] -mt-10 rounded-t-[40px] p-6 space-y-5 overflow-y-auto">
+        <div className="space-y-1">
           <div className="flex justify-between items-center">
             <h1 className="text-2xl font-black text-gray-900">{salon.name}</h1>
             <div className="flex items-center gap-1 bg-yellow-50 px-2 py-1 rounded-lg">
@@ -52,8 +52,8 @@ export const SalonDetailScreen: React.FC = () => {
               <span className="text-sm font-bold text-yellow-700">{salon.rating}</span>
             </div>
           </div>
-          <div className="flex items-center gap-1 text-gray-500 text-sm">
-            <MapPin className="w-4 h-4" />
+          <div className="flex items-center gap-1 text-gray-500 text-xs">
+            <MapPin className="w-3.5 h-3.5" />
             <span>{salon.location}</span>
           </div>
         </div>

@@ -21,22 +21,22 @@ export const ProfileScreen: React.FC = () => {
   ];
 
   return (
-    <div className="p-6 space-y-8">
+    <div className="p-6 space-y-6">
       <h1 className="text-2xl font-black text-gray-900">Profile</h1>
 
-      <div className="flex flex-col items-center space-y-4">
+      <div className="flex flex-col items-center space-y-3">
         <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-xl">
           <img 
-            src="https://api.dicebear.com/7.x/avataaars/svg?seed=Anas" 
+            src="https://api.dicebear.com/7.x/avataaars/svg?seed=Mujtaba" 
             alt="Avatar" 
             className="w-full h-full object-cover"
           />
         </div>
         <div className="text-center">
           <h2 className="text-xl font-black text-gray-900">{user?.name}</h2>
-          <p className="text-sm text-gray-400">{user?.email}</p>
+          <p className="text-xs text-gray-400">{user?.email}</p>
         </div>
-        <div className="bg-[#FDF2F4] text-[#FF2D55] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+        <div className="bg-[#FDF2F4] text-[#FF2D55] px-4 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">
           {user?.role}
         </div>
       </div>
@@ -46,15 +46,15 @@ export const ProfileScreen: React.FC = () => {
           <button 
             key={item.label}
             className={cn(
-              "w-full p-5 flex items-center justify-between hover:bg-gray-50 transition-colors",
+              "w-full p-4 flex items-center justify-between hover:bg-gray-50 transition-colors",
               index !== menuItems.length - 1 && "border-b border-gray-50"
             )}
           >
             <div className="flex items-center gap-4">
-              <div className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center text-gray-400">
-                <item.icon className="w-5 h-5" />
+              <div className="w-9 h-9 bg-gray-50 rounded-xl flex items-center justify-center text-gray-400">
+                <item.icon className="w-4.5 h-4.5" />
               </div>
-              <span className="font-bold text-gray-700">{item.label}</span>
+              <span className="font-bold text-gray-700 text-sm">{item.label}</span>
             </div>
             <ChevronRight className="w-5 h-5 text-gray-300" />
           </button>

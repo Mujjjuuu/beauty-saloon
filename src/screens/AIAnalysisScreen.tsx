@@ -20,22 +20,22 @@ export const AIAnalysisScreen: React.FC = () => {
   };
 
   return (
-    <div className="p-6 space-y-8">
-      <div className="space-y-2">
+    <div className="p-6 space-y-6">
+      <div className="space-y-1">
         <h1 className="text-2xl font-black text-gray-900">AI Face Analysis</h1>
-        <p className="text-sm text-gray-500">Upload your photo to get personalized style recommendations.</p>
+        <p className="text-xs text-gray-500">Upload your photo to get personalized style recommendations.</p>
       </div>
 
-      <div className="aspect-square bg-white rounded-[40px] border-2 border-dashed border-[#FF2D55]/20 flex flex-col items-center justify-center p-8 space-y-4 relative overflow-hidden">
-        <div className="w-20 h-20 bg-[#FDF2F4] rounded-full flex items-center justify-center text-[#FF2D55]">
-          <Upload className="w-8 h-8" />
+      <div className="aspect-square bg-white rounded-[40px] border-2 border-dashed border-[#FF2D55]/20 flex flex-col items-center justify-center p-6 space-y-3 relative overflow-hidden">
+        <div className="w-16 h-16 bg-[#FDF2F4] rounded-full flex items-center justify-center text-[#FF2D55]">
+          <Upload className="w-7 h-7" />
         </div>
         <div className="text-center">
-          <h3 className="font-bold text-gray-900">Upload your image</h3>
-          <p className="text-xs text-gray-400 mt-1">Take a clear photo of your face</p>
+          <h3 className="font-bold text-gray-900 text-sm">Upload your image</h3>
+          <p className="text-[10px] text-gray-400 mt-0.5">Take a clear photo of your face</p>
         </div>
-        <Button variant="primary" size="sm" className="rounded-xl">
-          <Camera className="w-4 h-4 mr-2" />
+        <Button variant="primary" size="sm" className="rounded-xl py-2 h-auto">
+          <Camera className="w-3.5 h-3.5 mr-2" />
           Take Photo
         </Button>
       </div>

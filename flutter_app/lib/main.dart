@@ -7,6 +7,7 @@ import 'screens/booking_screen.dart';
 import 'screens/my_bookings_screen.dart';
 import 'screens/profile_screen.dart';
 import 'screens/ai_analysis_screen.dart';
+import 'screens/main_scaffold.dart';
 
 void main() {
   runApp(const BeautyAIApp());
@@ -35,10 +36,10 @@ class BeautyAIApp extends StatelessWidget {
       routes: {
         '/': (context) => const SplashScreen(),
         '/login': (context) => const LoginScreen(),
-        '/home': (context) => const HomeScreen(),
-        '/bookings': (context) => const MyBookingsScreen(),
-        '/profile': (context) => const ProfileScreen(),
-        '/ai-analysis': (context) => const AIAnalysisScreen(),
+        '/home': (context) => const MainScaffold(initialIndex: 0),
+        '/ai-analysis': (context) => const MainScaffold(initialIndex: 1),
+        '/bookings': (context) => const MainScaffold(initialIndex: 2),
+        '/profile': (context) => const MainScaffold(initialIndex: 3),
       },
       onGenerateRoute: (settings) {
         if (settings.name?.startsWith('/salon/') ?? false) {

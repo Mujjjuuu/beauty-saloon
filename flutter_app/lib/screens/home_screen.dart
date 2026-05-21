@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/custom_bottom_nav.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -151,7 +152,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 32),
+              const SizedBox(height: 20),
               // Section Title
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
@@ -161,7 +162,7 @@ class HomeScreen extends StatelessWidget {
                     const Text(
                       'Featured Salons',
                       style: TextStyle(
-                        fontSize: 20,
+                        fontSize: 18,
                         fontWeight: FontWeight.w900,
                         color: Color(0xFF111827),
                         letterSpacing: -0.5,
@@ -172,30 +173,30 @@ class HomeScreen extends StatelessWidget {
                       style: TextStyle(
                         color: const Color(0xFFFF2D55),
                         fontWeight: FontWeight.w900,
-                        fontSize: 11,
+                        fontSize: 10,
                         letterSpacing: 1,
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 16),
+              const SizedBox(height: 12),
               // Salon List (Horizontal)
               SizedBox(
-                height: 280,
+                height: 260,
                 child: ListView.separated(
                   padding: const EdgeInsets.symmetric(horizontal: 24),
                   scrollDirection: Axis.horizontal,
                   itemCount: 3,
-                  separatorBuilder: (context, index) => const SizedBox(width: 20),
+                  separatorBuilder: (context, index) => const SizedBox(width: 16),
                   itemBuilder: (context, index) {
                     return GestureDetector(
                       onTap: () => Navigator.pushNamed(context, '/salon/s${index + 1}'),
                       child: Container(
-                        width: 300,
+                        width: 280,
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(32),
+                          borderRadius: BorderRadius.circular(28),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(0.04),
@@ -210,30 +211,30 @@ class HomeScreen extends StatelessWidget {
                             Stack(
                               children: [
                                 ClipRRect(
-                                  borderRadius: const BorderRadius.vertical(top: Radius.circular(32)),
+                                  borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
                                   child: Image.network(
                                     'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800',
-                                    height: 160,
+                                    height: 140,
                                     width: double.infinity,
                                     fit: BoxFit.cover,
                                   ),
                                 ),
                                 Positioned(
-                                  top: 16,
-                                  right: 16,
+                                  top: 12,
+                                  right: 12,
                                   child: Container(
-                                    padding: const EdgeInsets.all(10),
+                                    padding: const EdgeInsets.all(8),
                                     decoration: BoxDecoration(
                                       color: Colors.white.withOpacity(0.9),
-                                      borderRadius: BorderRadius.circular(14),
+                                      borderRadius: BorderRadius.circular(12),
                                     ),
-                                    child: const Icon(Icons.favorite_border, color: Color(0xFFFF2D55), size: 20),
+                                    child: const Icon(Icons.favorite_border, color: Color(0xFFFF2D55), size: 18),
                                   ),
                                 ),
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(28.0),
+                              padding: const EdgeInsets.all(20.0),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -242,42 +243,42 @@ class HomeScreen extends StatelessWidget {
                                     'Elite Grooming Studio',
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w900,
                                       letterSpacing: -0.5,
                                       color: Color(0xFF111827),
                                     ),
                                   ),
-                                  const SizedBox(height: 10),
+                                  const SizedBox(height: 6),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(Icons.location_on_outlined, color: Colors.grey[400], size: 14),
-                                      const SizedBox(width: 6),
+                                      Icon(Icons.location_on_outlined, color: Colors.grey[400], size: 12),
+                                      const SizedBox(width: 4),
                                       Text(
                                         'Downtown, New York',
                                         style: TextStyle(
                                           color: Colors.grey[500],
-                                          fontSize: 13,
+                                          fontSize: 11,
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 24),
+                                  const SizedBox(height: 16),
                                   Container(
                                     width: double.infinity,
-                                    padding: const EdgeInsets.symmetric(vertical: 20),
+                                    padding: const EdgeInsets.symmetric(vertical: 12),
                                     decoration: BoxDecoration(
                                       border: Border(top: BorderSide(color: Colors.grey[100]!)),
                                     ),
                                     child: Column(
                                       children: [
                                         Container(
-                                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                                           decoration: BoxDecoration(
                                             color: const Color(0xFFFF2D55).withOpacity(0.05),
-                                            borderRadius: BorderRadius.circular(16),
+                                            borderRadius: BorderRadius.circular(12),
                                           ),
                                           child: Column(
                                             children: [
@@ -285,39 +286,22 @@ class HomeScreen extends StatelessWidget {
                                                 'TOTAL ORDERS',
                                                 style: TextStyle(
                                                   color: const Color(0xFFFF2D55),
-                                                  fontSize: 10,
+                                                  fontSize: 9,
                                                   fontWeight: FontWeight.w900,
                                                   letterSpacing: 1.2,
                                                 ),
                                               ),
-                                              const SizedBox(height: 4),
+                                              const SizedBox(height: 2),
                                               const Text(
                                                 '1.2k+',
                                                 style: TextStyle(
                                                   color: Color(0xFFFF2D55),
-                                                  fontSize: 18,
+                                                  fontSize: 14,
                                                   fontWeight: FontWeight.w900,
                                                 ),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        const SizedBox(height: 16),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-                                            Icon(Icons.access_time, color: Colors.grey[400], size: 12),
-                                            const SizedBox(width: 6),
-                                            Text(
-                                              '8 km • Open Now',
-                                              style: TextStyle(
-                                                color: Colors.grey[400],
-                                                fontSize: 11,
-                                                fontWeight: FontWeight.bold,
-                                                letterSpacing: 0.5,
-                                              ),
-                                            ),
-                                          ],
                                         ),
                                       ],
                                     ),
@@ -332,43 +316,43 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               ),
-              const SizedBox(height: 40),
-              // Nearby Salons (Vertical)
+              const SizedBox(height: 24),
+              // Nearby Salons Section Title
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Column(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const Text(
                       'Nearby Salons',
-                      textAlign: TextAlign.center,
                       style: TextStyle(
-                        fontSize: 24,
+                        fontSize: 18,
                         fontWeight: FontWeight.w900,
                         color: Color(0xFF111827),
-                        letterSpacing: -1,
+                        letterSpacing: -0.5,
                       ),
                     ),
-                    const SizedBox(height: 8),
                     Text(
-                      'Handpicked styles just for you',
-                      textAlign: TextAlign.center,
+                      'SEE ALL',
                       style: TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.grey[400],
+                        color: const Color(0xFFFF2D55),
+                        fontWeight: FontWeight.w900,
+                        fontSize: 10,
+                        letterSpacing: 1,
                       ),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 24),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
+              const SizedBox(height: 12),
+              // Nearby Salons (Horizontal)
+              SizedBox(
+                height: 260,
                 child: ListView.separated(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  scrollDirection: Axis.horizontal,
                   itemCount: 4,
-                  separatorBuilder: (context, index) => const SizedBox(height: 24),
+                  separatorBuilder: (context, index) => const SizedBox(width: 16),
                   itemBuilder: (context, index) {
                     final images = [
                       'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800',
@@ -385,9 +369,10 @@ class HomeScreen extends StatelessWidget {
                     return GestureDetector(
                       onTap: () => Navigator.pushNamed(context, '/salon/s${index + 4}'),
                       child: Container(
+                        width: 280,
                         decoration: BoxDecoration(
                           color: Colors.white,
-                          borderRadius: BorderRadius.circular(32),
+                          borderRadius: BorderRadius.circular(28),
                           boxShadow: [
                             BoxShadow(
                               color: Colors.black.withOpacity(0.04),
@@ -400,16 +385,16 @@ class HomeScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             ClipRRect(
-                              borderRadius: const BorderRadius.vertical(top: Radius.circular(32)),
+                              borderRadius: const BorderRadius.vertical(top: Radius.circular(28)),
                               child: Image.network(
                                 images[index],
-                                height: 200,
+                                height: 140,
                                 width: double.infinity,
                                 fit: BoxFit.cover,
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(28.0),
+                              padding: const EdgeInsets.all(20.0),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -418,42 +403,42 @@ class HomeScreen extends StatelessWidget {
                                     names[index],
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
-                                      fontSize: 20,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w900,
                                       letterSpacing: -0.5,
                                       color: Color(0xFF111827),
                                     ),
                                   ),
-                                  const SizedBox(height: 10),
+                                  const SizedBox(height: 6),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Icon(Icons.location_on_outlined, color: Colors.grey[400], size: 14),
-                                      const SizedBox(width: 6),
+                                      Icon(Icons.location_on_outlined, color: Colors.grey[400], size: 12),
+                                      const SizedBox(width: 4),
                                       Text(
                                         'Lahore, Pakistan',
                                         style: TextStyle(
                                           color: Colors.grey[500],
-                                          fontSize: 13,
+                                          fontSize: 11,
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
                                     ],
                                   ),
-                                  const SizedBox(height: 24),
+                                  const SizedBox(height: 16),
                                   Container(
                                     width: double.infinity,
-                                    padding: const EdgeInsets.symmetric(vertical: 20),
+                                    padding: const EdgeInsets.symmetric(vertical: 12),
                                     decoration: BoxDecoration(
                                       border: Border(top: BorderSide(color: Colors.grey[100]!)),
                                     ),
                                     child: Column(
                                       children: [
                                         Container(
-                                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                                           decoration: BoxDecoration(
                                             color: const Color(0xFFFF2D55).withOpacity(0.05),
-                                            borderRadius: BorderRadius.circular(16),
+                                            borderRadius: BorderRadius.circular(12),
                                           ),
                                           child: Column(
                                             children: [
@@ -461,39 +446,22 @@ class HomeScreen extends StatelessWidget {
                                                 'TOTAL ORDERS',
                                                 style: TextStyle(
                                                   color: const Color(0xFFFF2D55),
-                                                  fontSize: 10,
+                                                  fontSize: 9,
                                                   fontWeight: FontWeight.w900,
                                                   letterSpacing: 1.2,
                                                 ),
                                               ),
-                                              const SizedBox(height: 4),
+                                              const SizedBox(height: 2),
                                               Text(
                                                 '${(index + 1) * 450}+',
                                                 style: const TextStyle(
                                                   color: Color(0xFFFF2D55),
-                                                  fontSize: 18,
+                                                  fontSize: 14,
                                                   fontWeight: FontWeight.w900,
                                                 ),
                                               ),
                                             ],
                                           ),
-                                        ),
-                                        const SizedBox(height: 16),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-                                            Icon(Icons.access_time, color: Colors.grey[400], size: 12),
-                                            const SizedBox(width: 6),
-                                            Text(
-                                              '${(index + 1) * 3} km • Open Now',
-                                              style: TextStyle(
-                                                color: Colors.grey[400],
-                                                fontSize: 11,
-                                                fontWeight: FontWeight.bold,
-                                                letterSpacing: 0.5,
-                                              ),
-                                            ),
-                                          ],
                                         ),
                                       ],
                                     ),
@@ -508,29 +476,10 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               ),
-              const SizedBox(height: 40),
+              const SizedBox(height: 32),
             ],
           ),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: const Color(0xFFFF2D55),
-        unselectedItemColor: Colors.grey,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        onTap: (index) {
-          if (index == 1) Navigator.pushNamed(context, '/ai-analysis');
-          if (index == 2) Navigator.pushNamed(context, '/bookings');
-          if (index == 3) Navigator.pushNamed(context, '/profile');
-        },
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.auto_awesome), label: 'AI Style'),
-          BottomNavigationBarItem(icon: Icon(Icons.calendar_month), label: 'Bookings'),
-          BottomNavigationBarItem(icon: Icon(Icons.person_outline), label: 'Profile'),
-        ],
       ),
     );
   }

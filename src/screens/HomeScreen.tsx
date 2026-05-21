@@ -10,7 +10,7 @@ export const HomeScreen: React.FC = () => {
   const { user, salons } = useAppContext();
 
   return (
-    <div className="pb-24 space-y-8">
+    <div className="pb-24 space-y-6">
       <header className="flex justify-between items-center px-6 pt-6">
         <div className="flex items-center gap-3">
           <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-[#FF2D55]/20 shadow-inner">
@@ -55,14 +55,14 @@ export const HomeScreen: React.FC = () => {
         </div>
       </div>
 
-      <section className="space-y-6">
+      <section className="space-y-4">
         <div className="flex justify-between items-center px-6">
           <h3 className="font-black text-xl text-gray-900 tracking-tight">Featured Salons</h3>
           <button className="text-[#FF2D55] text-xs font-black uppercase tracking-wider">See All</button>
         </div>
-        <div className="flex overflow-x-auto gap-5 px-6 pb-6 no-scrollbar scroll-smooth snap-x">
+        <div className="flex overflow-x-auto gap-5 px-6 pb-2 no-scrollbar scroll-smooth snap-x">
           {salons.slice(0, 3).map((salon) => (
-            <div key={salon.id} className="min-w-[300px] snap-start">
+            <div key={salon.id} className="min-w-[280px] snap-start">
               <SalonCard 
                 salon={salon} 
                 onClick={() => navigate(`/salon/${salon.id}`)}
@@ -73,19 +73,22 @@ export const HomeScreen: React.FC = () => {
         </div>
       </section>
 
-      <section className="space-y-6 px-6 pb-24">
-        <div className="flex flex-col items-center text-center space-y-2 mb-6">
-          <h3 className="font-black text-2xl text-gray-900 tracking-tight">Nearby Salons</h3>
-          <p className="text-xs text-gray-400 font-medium">Handpicked styles just for you</p>
+      <section className="space-y-4">
+        <div className="flex justify-between items-center px-6">
+          <h3 className="font-black text-xl text-gray-900 tracking-tight">Nearby Salons</h3>
+          <button className="text-[#FF2D55] text-xs font-black uppercase tracking-wider">See All</button>
         </div>
-        <div className="grid grid-cols-1 gap-8">
+        <div className="flex overflow-x-auto gap-5 px-6 pb-2 no-scrollbar scroll-smooth snap-x">
           {salons.slice(3).map((salon) => (
-            <SalonCard 
-              key={salon.id} 
-              salon={salon} 
-              onClick={() => navigate(`/salon/${salon.id}`)}
-            />
+            <div key={salon.id} className="min-w-[280px] snap-start">
+              <SalonCard 
+                key={salon.id} 
+                salon={salon} 
+                onClick={() => navigate(`/salon/${salon.id}`)}
+              />
+            </div>
           ))}
+          <div className="min-w-[1px] pr-1" />
         </div>
       </section>
     </div>

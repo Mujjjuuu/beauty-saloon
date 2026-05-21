@@ -26,27 +26,41 @@ export const Layout: React.FC = () => {
       </main>
 
       {!isAuthPage && (
-        <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md bg-white/80 backdrop-blur-xl border-t border-gray-100 px-6 py-4 flex justify-between items-center z-50">
-          {navItems.map((item) => (
-            <NavLink
-              key={item.path}
-              to={item.path}
-              className={({ isActive }) => cn(
-                "flex flex-col items-center gap-1 transition-all relative",
-                isActive ? "text-[#FF2D55]" : "text-gray-400"
-              )}
-            >
-              <item.icon className="w-6 h-6" />
-              <span className="text-[10px] font-bold">{item.label}</span>
-              {location.pathname === item.path && (
-                <motion.div 
-                  layoutId="nav-indicator"
-                  className="absolute -top-4 w-1 h-1 bg-[#FF2D55] rounded-full"
-                />
-              )}
-            </NavLink>
-          ))}
-        </nav>
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-50">
+          <nav className="bg-white/90 backdrop-blur-xl border border-gray-100 px-4 py-3 rounded-[32px] flex justify-between items-center shadow-2xl shadow-black/5 relative">
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <NavLink
+                  key={item.path}
+                  to={item.path}
+                  className={cn(
+                    "flex items-center justify-center gap-2 px-4 py-2 rounded-2xl transition-all duration-300 relative z-10",
+                    isActive ? "text-[#FF2D55]" : "text-gray-400 hover:text-gray-600"
+                  )}
+                >
+                  <item.icon className={cn("w-5 h-5 transition-transform duration-300", isActive && "scale-110")} />
+                  {isActive && (
+                    <motion.span 
+                      initial={{ opacity: 0, width: 0 }}
+                      animate={{ opacity: 1, width: 'auto' }}
+                      className="text-xs font-black whitespace-nowrap overflow-hidden"
+                    >
+                      {item.label}
+                    </motion.span>
+                  )}
+                  {isActive && (
+                    <motion.div 
+                      layoutId="nav-pill"
+                      className="absolute inset-0 bg-[#FF2D55]/5 rounded-2xl -z-10"
+                      transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                    />
+                  )}
+                </NavLink>
+              );
+            })}
+          </nav>
+        </div>
       )}
     </div>
   );
